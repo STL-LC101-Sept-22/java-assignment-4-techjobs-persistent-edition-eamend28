@@ -1,12 +1,19 @@
 package org.launchcode.techjobs.persistent.models.data;
 
 import org.launchcode.techjobs.persistent.models.Job;
-import org.springframework.data.repository.CrudRepository;
+
 import org.springframework.stereotype.Repository;
 
-import javax.transaction.Transactional;
+import java.util.Optional;
 
 @Repository
-@Transactional
-public interface JobRepository extends CrudRepository<Job, Integer> {
+//@Transactional
+public interface JobRepository {
+    Iterable<Job> findAll();
+
+    default void save(Job newJob) {
+
+    }
+
+    Optional<Job> findById(int jobId);
 }

@@ -17,7 +17,6 @@ import static org.launchcode.techjobs.persistent.controllers.ListController.colu
 @Controller
 @RequestMapping("search")
 public class SearchController {
-
     @Autowired
     private JobRepository jobRepository;
 
